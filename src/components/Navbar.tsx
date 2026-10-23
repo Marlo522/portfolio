@@ -1,6 +1,8 @@
-import { ArrowUpRight, Award, Blocks, Braces, GraduationCap, House, Mail, PanelsTopLeft, UserRound } from 'lucide-react'
+import { ArrowUpRight, Award, Braces, GraduationCap, House, Mail, Moon, Sun, PanelsTopLeft, UserRound } from 'lucide-react'
 import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { personal } from '@/data/personal'
+import { useDarkMode } from '@/hooks/useDarkMode'
+import { ProfilePicture } from '@/components/ProfilePicture'
 
 const links = [
   { id: 'hero', label: 'Home', Icon: House },
@@ -15,10 +17,11 @@ const sectionIds = links.map((link) => link.id)
 
 export function Navbar() {
   const activeId = useScrollSpy(sectionIds)
+  const { isDark, toggle } = useDarkMode()
   return (
     <aside className="sidebar" aria-label="Portfolio sidebar">
       <a className="brand" href="#hero" aria-label={personal.name + ' — home'}>
-        <span className="brand-mark"><Blocks size={28} strokeWidth={1.6} /></span>
+        <ProfilePicture className="sidebar-portrait" priority />
         <span className="brand-name">MARLO VELUZ<span>WEB & MOBILE</span></span>
       </a>
       <p className="sidebar-caption">THE PORTFOLIO</p>
@@ -36,6 +39,10 @@ export function Navbar() {
           ))}
         </ul>
       </nav>
+      <button type="button" className="theme-toggle" onClick={toggle} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'} title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}>
+        {isDark ? <Sun size={20} aria-hidden="true" /> : <Moon size={20} aria-hidden="true" />}
+        <span>{isDark ? 'Light mode' : 'Dark mode'}</span>
+      </button>
       <div className="sidebar-bottom">
         <p>Based in<br /><strong>Navotas, Philippines</strong></p>
         <a href={personal.socials.github} target="_blank" rel="noopener noreferrer">GitHub <ArrowUpRight size={14} /></a>
