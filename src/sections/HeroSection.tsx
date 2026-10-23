@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
 import { personal } from '@/data/personal'
-import { Brick } from '@/components/Brick'
+import { ProfilePicture } from '@/components/ProfilePicture'
 
 export function HeroSection() {
   return (
@@ -16,14 +16,10 @@ export function HeroSection() {
             <a href="#contact" className="text-link">Get in touch <ArrowUpRight size={17} /></a>
           </div>
         </div>
-        <figure className="brick-figure" aria-label="Three interlocking black and white building bricks labeled web, mobile, and backend">
-          <div className="assembly-label"><span>SMALL PIECES.</span><span>WORKING TOGETHER.</span></div>
-          <div className="brick-stack" aria-hidden="true">
-            <Brick label="WEB" dark className="stack-top" />
-            <Brick label="MOBILE" className="stack-middle" />
-            <Brick label="BACKEND" dark className="stack-bottom" />
-          </div>
-          <figcaption>ONE BUILD AT A TIME. <span>↗</span></figcaption>
+        <figure className="profile-figure">
+          <div className="portrait-studs" aria-hidden="true"><span /><span /><span /><span /></div>
+          <ProfilePicture className="hero-portrait" priority />
+          <figcaption><span>ONE BUILD AT A TIME.</span><ArrowUpRight size={20} aria-hidden="true" /></figcaption>
         </figure>
       </div>
       <div className="hero-bottomline"><span>{personal.location}</span><a href="#about">A little about me <ArrowDown size={14} /></a></div>
