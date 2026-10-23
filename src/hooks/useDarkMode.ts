@@ -1,25 +1,11 @@
-import { useState, useEffect } from 'react'
+import { createContext, useContext } from 'react'
 
-type Theme = 'dark' | 'light'
+export type Theme = 'light' | 'dark'
+export type ThemeState = { theme: Theme; isDark: boolean; toggle: () => void }
+export const ThemeContext = createContext<ThemeState | null>(null)
 
 export function useDarkMode() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem('portfolio-theme')
-    if (saved === 'dark' || saved === 'light') return saved
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  })
-
-  useEffect(() => {
-    const root = document.documentElement
-    if (theme === 'dark') {
-      root.classList.add('dark')
-    } else {
-      root.classList.remove('dark')
-    }
-    localStorage.setItem('portfolio-theme', theme)
-  }, [theme])
-
-  const toggle = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
-
-  return { theme, toggle, isDark: theme === 'dark' }
+  const value = useContext(ThemeContext)
+  if (!value) throw new Error('useDarkMode must be used within ThemeProvider')
+  return value
 }
