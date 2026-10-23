@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
-import { Award, Calendar, Download, ExternalLink, Eye, X } from 'lucide-react'
+import { Calendar, Download, ExternalLink, Eye, X } from 'lucide-react'
 import { SectionWrapper, SectionHeading } from '@/components/SectionWrapper'
 import { FadeIn } from '@/components/FadeIn'
+import { CertificateIssuer } from '@/components/CertificateIssuer'
 import { certifications, type Certification } from '@/data/certifications'
 
 function CertificatePreview({ certificate, onClose }: { certificate: Certification; onClose: () => void }) {
@@ -83,9 +84,7 @@ export function CertificationsSection() {
               className="glass border border-border rounded-2xl p-6 flex flex-col gap-4 hover:border-primary/40 transition-colors h-full"
             >
               <div className="flex items-center justify-between gap-3">
-                <div className="w-12 h-12 border border-border bg-card-hover flex items-center justify-center">
-                  <Award size={22} />
-                </div>
+                <CertificateIssuer certificate={certificate} />
                 <span className="text-xs text-muted border border-border rounded-full px-3 py-1">PDF certificate</span>
               </div>
               <div className="flex-1 space-y-2">
