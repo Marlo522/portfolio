@@ -39,9 +39,11 @@ export function Navbar() {
           ))}
         </ul>
       </nav>
-      <button type="button" className="theme-toggle" onClick={toggle} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'} title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}>
-        {isDark ? <Sun size={20} aria-hidden="true" /> : <Moon size={20} aria-hidden="true" />}
-        <span>{isDark ? 'Light mode' : 'Dark mode'}</span>
+      <button type="button" className="theme-toggle" role="switch" aria-checked={isDark} onClick={toggle} aria-label="Dark mode" title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}>
+        <span className="theme-switch-track" aria-hidden="true">
+          <span className="theme-switch-thumb">{isDark ? <Moon size={12} /> : <Sun size={12} />}</span>
+        </span>
+        <span className="theme-toggle-label">{isDark ? 'Dark mode' : 'Light mode'}</span>
       </button>
       <div className="sidebar-bottom">
         <p>Based in<br /><strong>Navotas, Philippines</strong></p>
