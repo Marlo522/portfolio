@@ -17,7 +17,6 @@ export function ContactSection() {
           <span className="eyebrow">DROP ME A LINE</span>
           <a className="contact-email" href={'mailto:' + personal.socials.email}>{personal.socials.email}<ArrowUpRight size={24} /></a>
           <p>{personal.location}</p>
-          <a className="contact-phone" href={personal.phoneHref}>{personal.phone}</a>
           <div className="contact-socials">{links.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">{link.label}<ArrowUpRight size={15} /></a>)}</div>
         </div>
       </div>
