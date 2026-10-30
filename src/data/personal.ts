@@ -8,7 +8,6 @@ export const personal = {
   tagline: 'BS Information Technology student at FEU Institute of Technology, specializing in Web and Mobile Application. Currently learning React.js and Laravel.',
   bio: 'I am a 4th-year Bachelor of Science in Information Technology student specializing in Web and Mobile Application Development. I am passionate about technology and seeking opportunities for career growth and professional development in software engineering and networking. I am eager to enhance my technical skills, gain hands-on experience, and contribute to innovative projects.',
   location: 'Navotas City, Philippines',
-  phone: '+63 976 408 6512',
   phoneHref: 'tel:+639764086512',
   socials: {
     github: 'https://github.com/Marlo522',
