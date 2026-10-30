@@ -193,12 +193,10 @@ ul { list-style: none; padding: 0; }
 .learning-note .eyebrow { font-size: 12px; color: var(--subtle); }
 .learning-note p { font-size: 16px; font-weight: 600; margin-top: 4px; }
 .glass { background: var(--paper); border: 1px solid var(--shadow); box-shadow: 4px 4px 0 var(--soft-line); }
-#certifications [class*="rounded-"], .certificate-dialog, .certificate-dialog [class*="rounded-"] { border-radius: 0; }
+#certifications [class*="rounded-"] { border-radius: 0; }
 #certifications article { padding: 22px; }
 #certifications h3 { font-size: 16px; }
 #certifications .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.certificate-dialog { color: var(--ink); background: var(--paper); border: 2px solid var(--ink); }
-.certificate-dialog::backdrop { background: rgb(0 0 0 / 65%); }
 .education-list { border-top: 1px solid var(--ink); }
 .education-row { display: grid; grid-template-columns: 40px 1fr; gap: 20px; padding: 30px 0; border-bottom: 1px solid var(--line); }
 .education-row h3 { font-weight: 700; font-size: 20px; letter-spacing: -.5px; margin: 8px 0; }
@@ -336,8 +334,7 @@ ul { list-style: none; padding: 0; }
 #certifications h3 { font-size: 18px; line-height: 1.5; }
 #certifications article p { font-size: 16px; line-height: 1.6; }
 #certifications article p:last-child { font-size: 14px; }
-#certifications article button { font-size: 16px; min-height: 44px; }
-#certifications article a[download] { min-width: 44px; min-height: 44px; display: grid; place-items: center; }
+#certifications .certificate-link { font-size: 16px; min-height: 44px; }
 
 /* Live public GitHub activity */
 .github-panel { margin-top: 44px; border: 1px solid var(--ink); box-shadow: 5px 5px 0 var(--line); padding: 28px; min-width: 0; }
